@@ -1,0 +1,5 @@
+tabs: ['src/App.js']
+live-reload-browser: false
+terminal-one: |
+    npm install
+    npm run init

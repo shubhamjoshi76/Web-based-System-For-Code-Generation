@@ -1,0 +1,490 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  touch-action: none;
+  background: none;
+  box-sizing: border-box;
+  font-family: Courier New;
+  color: currentColor;
+}
+
+#root {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, #ff8844, #44ff88, #8844ff);
+  background-size: 500%;
+  background-repeat: no-repeat;
+  animation: gradient 20s linear infinite;
+}
+
+@keyframes gradient {
+  50% {
+    background-position: 100% 100%;
+  }
+
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+main>.tilt {
+  transform-style: preserve-3d;
+}
+
+.inner-element {
+  transform-style: preserve-3d;
+  background: transparent;
+
+  transform: translateZ(2.5vmin);
+  border-radius: 2.5vmin;
+  box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.25vmin);
+  -webkit-backdrop-filter: blur(1.25vmin);
+  border: 0.0125vmin solid rgba(128, 128, 128, 0.26);
+
+  transform: translateZ(2.5dvmin);
+  border-radius: 2.5dvmin;
+  box-shadow: 0 0.5dvmin 1dvmin rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.25dvmin);
+  -webkit-backdrop-filter: blur(1.25dvmin);
+  border: 0.0125dvmin solid rgba(128, 128, 128, 0.26);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  inset: 0;
+}
+
+.inner-element>* {
+  display: block;
+  transform: translateZ(-2.5vmin);
+  transform: translateZ(-2.5dvmin);
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.form>section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form>section>* {
+  margin: 1vmin;
+  margin: 1dvmin;
+  flex-grow: 1;
+}
+
+.form>section>img {
+  width: 33%;
+  flex-grow: 0.01;
+}
+
+#apiForm {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5vmin;
+  padding: 0 2.5dvmin;
+}
+
+#apiForm>input {
+  flex-grow: 1;
+  padding: 0.5vmin;
+  margin: 0.5vmin;
+
+  padding: 0.5dvmin;
+  margin: 0.5dvmin;
+}
+
+input {
+  padding: 2.5vmin;
+  padding: 2.5dvmin;
+  outline: none;
+  border: none;
+  color: currentColor;
+  text-align: center;
+}
+
+input:focus {
+  outline: 0.125vmin solid gold;
+  outline: 0.125dvmin solid gold;
+}
+
+body:has(input[type="text"]:invalid, input[type="text"]:placeholder-shown) #join {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+body:has(#id:not(:placeholder-shown)) #new {
+  pointer-events: none;
+  display: none;
+  opacity: 0.5;
+}
+
+body:has(#id:not(:placeholder-shown)) #clear {
+  display: block;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+#user {
+  pointer-events: none;
+}
+
+#join {
+  margin: 1vmin;
+  outline: 0.5vmin solid gold;
+  margin: 1dvmin;
+  outline: 0.5dvmin solid gold;
+}
+
+#clear {
+  display: none;
+}
+
+body:has(#id:placeholder-shown) #join {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+body:has(#id:not(:placeholder-shown)) #join {
+  width: 75%;
+  height: 100%;
+  opacity: 1;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 0.5vmin 0;
+  border-radius: 1.5vmin;
+  padding: 0.5dvmin 0;
+  border-radius: 1.5dvmin;
+}
+
+.inner-element:has(.form) {
+  width: 75vmin;
+  height: 50vmin;
+  width: 75dvmin;
+  height: 50dvmin;
+}
+
+.inner-element>section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5vmin;
+  gap: 2.5vmin;
+  padding: 2.5dvmin;
+  gap: 2.5dvmin;
+}
+
+.inner-element>section>img {
+  width: 25vmin;
+  width: 25dvmin;
+  aspect-ratio: 1;
+}
+
+.form>section>img {
+  width: 20vmin;
+  width: 20dvmin;
+  aspect-ratio: 1;
+}
+
+section:has(#google) {
+  flex-direction: row;
+}
+
+.inner-element:has(#google) {
+  padding: 2.5vmin;
+  padding: 2.5dvmin;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+main,
+#root {
+  padding: 1vmin;
+  padding: 1dvmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-element>loading {
+  width: 25dvw;
+  aspect-ratio: 1;
+  box-shadow: 0 0 1vmin rgba(0, 0, 0, 0.05);
+  border-radius: 2.5vmin;
+  box-shadow: 0 0 1dvmin rgba(0, 0, 0, 0.05);
+  border-radius: 2.5dvmin;
+}
+
+loading {
+  background: linear-gradient(95deg,
+      #ffffff88 8%,
+      #88888888 18%,
+      #ffffff88 33%);
+  background-size: 200% 200%;
+  animation: 0.5s shine linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.aside,
+.vin {
+  position: absolute;
+  z-index: 999;
+  height: 7.5vh;
+  height: 7.5dvh;
+  bottom: 0;
+  right: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 2.5vmin;
+  border: 0.5vmin solid gold;
+  border-radius: 2.5dvmin;
+  border: 0.5dvmin solid gold;
+}
+
+.vin {
+  left: 0;
+}
+
+.aside {
+  transition: all 500ms cubic-bezier(0.75, 1.5, 1, 1.5);
+}
+
+.aside:hover {
+  background: hsla(160, 100%, 20%, 0.1);
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .aside:hover {
+    -webkit-backdrop-filter: blur(0.25vmin);
+    backdrop-filter: blur(0.25vmin);
+    -webkit-backdrop-filter: blur(0.25dvmin);
+    backdrop-filter: blur(0.25dvmin);
+  }
+}
+
+.aside>section>img {
+  width: 85%;
+  aspect-ratio: 1;
+  margin: 1vmin;
+  margin: 1dvmin;
+}
+
+.aside:hover>#copy:hover {
+  background: green;
+}
+
+.aside:hover>#leave:hover {
+  background: red;
+}
+
+.aside>section>button {
+  display: none;
+}
+
+.aside:hover>section>button {
+  display: block;
+}
+
+.aside:hover {
+  width: 80%;
+  height: 80%;
+}
+
+.aside>section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside:hover>section>img {
+  width: 20.5vmin;
+  width: 20.5dvmin;
+  aspect-ratio: 1;
+}
+
+.aside:hover,
+.aside:hover>.group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: currentColor;
+  padding: 1vmin;
+  border: 0.5vmin solid goldenrod;
+  border-radius: 2.5vmin;
+  padding: 1dvmin;
+  border: 0.5dvmin solid goldenrod;
+  border-radius: 2.5dvmin;
+}
+
+.aside:hover>.group>section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside:hover>.group>.clients {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5vmin;
+  gap: 0.5dvmin;
+  overflow: auto;
+}
+
+.clients>*:nth-child(3n-1):nth-last-of-type(1) {
+  grid-column: span 2;
+}
+
+.clients>*:nth-child(3n-2):nth-last-of-type(1) {
+  grid-column: span 3;
+}
+
+.client {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2.5vmin;
+  border-radius: 2.5dvmin;
+}
+
+h3 {
+  text-align: center;
+}
+
+.client {
+  text-align: center;
+  padding: 1vmin;
+  border: 0.5vmin solid goldenrod;
+  gap: 0.5vmin;
+  padding: 1dvmin;
+  border: 0.5dvmin solid goldenrod;
+  gap: 0.5dvmin;
+}
+
+.client>img {
+  width: 25%;
+  aspect-ratio: 1;
+}
+
+.inner-element:has(.vin) {
+  width: calc(100vw - 1vmin);
+  height: calc(100vh - 1vmin);
+  width: calc(100dvw - 1dvmin);
+  height: calc(100dvh - 1dvmin);
+  justify-content: center;
+  align-items: stretch;
+  justify-items: stretch;
+  align-content: stretch;
+  gap: 0.5vmin;
+  gap: 0.5dvmin;
+  overflow: hidden;
+}
+
+.inner-element:has(.vin)>* {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+iframe {
+  background: white;
+  border: none;
+  outline: none;
+}
+
+.client>img {
+  width: 7.5vmin;
+  width: 7.5dvmin;
+  aspect-ratio: 1;
+}
+
+loading#inin {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+}
+
+.codicon-folding-collapsed:before {
+  content: "⧖" !important;
+}
+
+.codicon-folding-expanded:before {
+  content: "▿" !important;
+}
+
+.monaco-editor .inline-folded:after {
+  content: "⨝" !important;
+}
+
+@media (orientation: portrait) {
+  .inner-element:has(.vin) {
+    flex-direction: column;
+  }
+
+  .inner-element:has(.vin)>iframe {
+    height: calc(30vh - 1vmin);
+    width: calc(100vw - 1vmin);
+    height: calc(30dvh - 1dvmin);
+    width: calc(100dvw - 1dvmin);
+  }
+
+  .inner-element:has(.vin)>editor {
+    height: calc(70vh - 1vmin);
+    width: calc(100vw - 1vmin);
+    height: calc(70dvh - 1dvmin);
+    width: calc(100dvw - 1dvmin);
+  }
+}
+
+@media (orientation: landscape) {
+  .inner-element:has(.vin) {
+    flex-direction: row;
+  }
+
+  .inner-element:has(.vin)>iframe {
+    height: calc(100vh - 1vmin);
+    width: calc(30vw - 1vmin);
+    height: calc(100dvh - 1dvmin);
+    width: calc(30dvw - 1dvmin);
+  }
+
+  .inner-element:has(.vin)>editor {
+    height: calc(100vh - 1vmin);
+    width: calc(70vw - 1vmin);
+    height: calc(100dvh - 1dvmin);
+    width: calc(70dvw - 1dvmin);
+  }
+}
